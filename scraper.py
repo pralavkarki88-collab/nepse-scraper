@@ -43,6 +43,8 @@ def run_scraper():
 
         tables = page.locator("table")
 
+        print("📊 Tables found:", tables.count())
+
         turnover = tables.nth(2)
         gainers = tables.nth(4)
         losers = tables.nth(5)

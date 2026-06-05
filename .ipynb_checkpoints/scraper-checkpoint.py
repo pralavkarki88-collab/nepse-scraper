@@ -1,10 +1,17 @@
+
+
 import sqlite3
 from datetime import date
 from playwright.sync_api import sync_playwright
 
+print("🚀 script started")
+print("scraper running")
+
 URL = "https://www.merolagani.com/MarketSummary.aspx"
 
 import sqlite3
+
+print("🌐 starting scraping")
 
 def init_db():
     conn = sqlite3.connect("nepse.db")
@@ -35,6 +42,8 @@ def run_scraper():
         page.wait_for_timeout(5000)
 
         tables = page.locator("table")
+
+        print("📊 Tables found:", tables.count())
 
         turnover = tables.nth(2)
         gainers = tables.nth(4)

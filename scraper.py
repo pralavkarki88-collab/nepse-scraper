@@ -1,6 +1,11 @@
+
+
 import sqlite3
 from datetime import date
 from playwright.sync_api import sync_playwright
+
+
+print("scraper running")
 
 URL = "https://www.merolagani.com/MarketSummary.aspx"
 

@@ -4,12 +4,14 @@ import sqlite3
 from datetime import date
 from playwright.sync_api import sync_playwright
 
-
+print("🚀 script started")
 print("scraper running")
 
 URL = "https://www.merolagani.com/MarketSummary.aspx"
 
 import sqlite3
+
+print("🌐 starting scraping")
 
 def init_db():
     conn = sqlite3.connect("nepse.db")

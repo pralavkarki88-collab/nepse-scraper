@@ -43,6 +43,8 @@ def run_scraper():
 
         tables = page.locator("table")
 
+        print(tables.nth(2).inner_text()[:200])
+
         print("📊 Tables found:", tables.count())
 
         turnover = tables.nth(2)

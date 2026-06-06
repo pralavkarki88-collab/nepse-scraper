@@ -32,11 +32,11 @@ jobs:
         run: |
           sqlite3 nepse.db -header -csv "SELECT * FROM market_leaders;" > nepse.csv
 
-      - name: Commit updated database
+      - name: Commit updated database and CSV
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add nepse.db
+          git add nepse.db nepse.csv
           git status
-          git commit -m "update nepse data" || echo "no changes"
+          git commit -m "update nepse data + csv" || echo "no changes"
           git push

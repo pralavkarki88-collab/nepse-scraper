@@ -37,7 +37,8 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git pull --rebase origin main
+          git fetch origin
+          git reset --hard origin/main
 
           git add nepse.db nepse.csv
           git commit -m "update nepse data + csv" || echo "no changes"

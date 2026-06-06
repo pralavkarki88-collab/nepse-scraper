@@ -28,6 +28,10 @@ jobs:
       - name: Run scraper
         run: python scraper.py
 
+      - name: Export DB to CSV
+        run: |
+          sqlite3 nepse.db -header -csv "SELECT * FROM market_leaders;" > nepse.csv
+
       - name: Commit updated database
         run: |
           git config user.name "github-actions"
